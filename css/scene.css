@@ -1,0 +1,75 @@
+.character
+{
+	position:absolute;
+	width:200px;
+	height:500px;
+	left:500px;
+	top:30px;
+	background-repeat:no-repeat;
+}
+
+#container[character="cop"] .character
+{
+	left:25px;
+}
+#container[character="sarah"] .character
+{
+	left:100px;
+}
+#container[character="luke"] .character
+{
+	left:100px;
+}
+#container[character="default"] #characterName
+{
+	color:rgb(124, 79, 206);
+}
+#container[character="jay"] #characterName
+{
+	color:rgb(221, 83, 124);
+}
+#container[character="narrator"] #characterName
+{
+	color:rgb(0, 0, 0);
+}
+#container[character="sarah"] #characterName
+{
+	color:rgb(207, 78, 156);
+}
+#container[character="luke"] #characterName
+{
+	color:rgb(222, 88, 88);
+}
+#container[character="cop"] #characterName
+{
+	color:rgb(200, 96, 41);
+}
+
+#container[place="town"] #placeName
+{
+	color: rgb(254, 245, 249);
+}
+#container[place="house"] #placeName
+{
+	color: rgb(254, 245, 249);
+}
+#container[place="kitchen"] #placeName
+{
+	color: rgb(254, 245, 249);
+}
+#container[place="apartment"] #placeName
+{
+	color: rgb(254, 245, 249);
+}
+#container[place="store"] #placeName
+{
+	color: rgb(254, 245, 249);
+}
+#container[place="call"] #placeName
+{
+	color: rgb(254, 245, 249);
+}
+#container[place="screen"] #placeName
+{
+	color: rgb(254, 245, 249);
+}
