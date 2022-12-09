@@ -1,9 +1,13 @@
-//Initializes the game
-function initial_server()
+//Initializes the game in a server environment
+//Doesn't rely on the data/processed-data.js file, and asynchronously loads the .json files instead
+//A server environment (or a local *AMP stack, node, python microserver...) is required for the $.getJSON calls to work
+//Except if your browser is particularly chill, in which case, maybe it works okay?
+//I don't know, mine isn't.
+function init_async()
 {
 	$.getJSON("data/characters.json", function(jsonCharacters) {
 		characters = jsonCharacters;
-		initialCharacters();
+		initCharacters();
 
 		$.getJSON("data/places.json", function(jsonPlaces) {
 
@@ -19,15 +23,33 @@ function initial_server()
 }
 
 //Initialize the character data after the data has been loaded
-function initialCharacters()
+function initCharacters()
 {
+	for(var c in characters)
+	{
+		//Set a default approval level for all characters
+		characters[c].approval = 0;
+	}
 }
 
 //Called when the game is fully initialized
-function onInitial()
+function onInit()
 {
-	//Starts the game on the first scene
+	//Only one thing left to do: start the game on the first Scene \o/ Here we go~
 	displayScene("start");
 }
 
-initial_server();
+//Are you running the game in a server environment?
+//If you don't, or don't know if you do:
+//- It's okay I still like you;
+//- You will need to double-click build.bat everytime you edit the characters, places or story files;
+//- You'll start the game by double-clicking index.html or game.html
+//- You don't need to touch anything below, you can close this file :)
+
+//If you do:
+//- Great, you can edit the characters, places and story files and see your changes immediately in the game;
+//- Do not start the game by double clicking the html files, use your server path instead;
+//- Comment init_local() and uncomment init_async(), and you're done :)
+
+//init_local();
+init_async();
